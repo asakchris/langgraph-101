@@ -12,6 +12,11 @@ langchain-openai = "*"
 langgraph = "*"
 grandalf = "*"
 langchain-community = "*"
+beautifulsoup4 = "*"
+tavily-python = "*"
+langchainhub = "*"
+langchain-chroma = "*"
+pytest = "*"
 
 [dev-packages]
 

@@ -27,9 +27,11 @@ builder.add_conditional_edges("revise", event_loop)
 builder.set_entry_point("draft")
 graph = builder.compile()
 
-#print(graph.get_graph().draw_mermaid())
-#graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
+# print(graph.get_graph().draw_mermaid())
+# graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
 
-res = graph.invoke("Write about AI-Powered SOC / autonomous soc  problem domain, list startups that do that and raised capital.")
+res = graph.invoke(
+    "Write about AI-Powered SOC / autonomous soc  problem domain, list startups that do that and raised capital."
+)
 print(res[-1].tool_calls[0]["args"]["answer"])
 print(res)
