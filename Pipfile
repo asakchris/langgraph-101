@@ -17,6 +17,7 @@ tavily-python = "*"
 langchainhub = "*"
 langchain-chroma = "*"
 pytest = "*"
+langgraph-checkpoint-sqlite = "*"
 
 [dev-packages]
 
