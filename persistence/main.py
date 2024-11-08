@@ -8,6 +8,7 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.checkpoint.sqlite import SqliteSaver
 
+
 class State(TypedDict):
     input: str
     user_feedback: str
@@ -36,10 +37,10 @@ builder.add_edge("step_1", "human_feedback")
 builder.add_edge("human_feedback", "step_3")
 builder.add_edge("step_3", END)
 
-#memory = MemorySaver()
+# memory = MemorySaver()
 conn = sqlite3.connect("checkpoints.sqlite", check_same_thread=False)
 memory = SqliteSaver(conn)
-#memory = SqliteSaver.from_conn_string("checkpoints.sqlite")
+# memory = SqliteSaver.from_conn_string("checkpoints.sqlite")
 
 graph = builder.compile(checkpointer=memory, interrupt_before=["human_feedback"])
 
